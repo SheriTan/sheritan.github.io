@@ -111,6 +111,27 @@ body {
         font-weight: 600;
     }
 
+    .card_subheading {
+        display: flex;
+        align-items: center;
+        font-size: 32px;
+        font-weight: 600;
+
+        .goBack {
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-right: 0.5rem;
+            background-image: url('/public/projects/back.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
+
+            &:hover {
+                background-image: url('/public/projects/back-hover.png');
+            }
+        }
+    }
+
     .contents {
         display: flex;
         flex-direction: column;
@@ -122,6 +143,10 @@ body {
         }
 
         &.contact div {
+            margin-bottom: 1.25em;
+        }
+
+        &.project span {
             margin-bottom: 1.25em;
         }
 
@@ -144,6 +169,14 @@ body {
                 }
             }
         }
+
+        .showcaseVid{
+            max-width: 37.5em;
+            max-height: 22.5em;
+            display: flex;
+            justify-self: center;
+            align-self: center;
+        }
     }
 
     .thumbnail_display {
@@ -155,6 +188,13 @@ body {
 
         .projContainer {
             margin-bottom: 1.25em;
+            display: flex;
+
+            &:hover {
+                box-shadow: 2px 2px 15px $secondary_nav;
+                border-radius: 10px;
+                transform: translateY(-2px);
+            }
         }
     }
 }

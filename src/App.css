@@ -98,6 +98,24 @@ body {
   font-size: 36px;
   font-weight: 600;
 }
+.main_content .card_subheading {
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 600;
+}
+.main_content .card_subheading .goBack {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 0.5rem;
+  background-image: url("/public/projects/back.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.main_content .card_subheading .goBack:hover {
+  background-image: url("/public/projects/back-hover.png");
+}
 .main_content .contents {
   display: flex;
   flex-direction: column;
@@ -108,6 +126,9 @@ body {
   margin-bottom: 1.5em;
 }
 .main_content .contents.contact div {
+  margin-bottom: 1.25em;
+}
+.main_content .contents.project span {
   margin-bottom: 1.25em;
 }
 .main_content .contents .contact_details {
@@ -127,6 +148,13 @@ body {
 .main_content .contents .contact_details a:hover {
   color: #7da8b6;
 }
+.main_content .contents .showcaseVid {
+  max-width: 37.5em;
+  max-height: 22.5em;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+}
 .main_content .thumbnail_display {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -136,4 +164,10 @@ body {
 }
 .main_content .thumbnail_display .projContainer {
   margin-bottom: 1.25em;
+  display: flex;
+}
+.main_content .thumbnail_display .projContainer:hover {
+  box-shadow: 2px 2px 15px #3B7081;
+  border-radius: 10px;
+  transform: translateY(-2px);
 }/*# sourceMappingURL=App.css.map */

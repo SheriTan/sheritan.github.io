@@ -1,15 +1,18 @@
 import './App.css';
 import React, { useEffect, useRef, useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 import Layout from './utils/Layout';
 import About from './components/About';
 import Projects from './components/Projects';
+import Project from './components/Project';
 import Contact from './components/Contact';
 
 const App = () => {
+  const [projects, setProjects] = useState([]);
+  const [subHeading, setSubHeading] = useState('');
 
-  const pages = [
+  const [pages, setPages] = useState([
     {
       name: 'About',
       to: '/',
@@ -20,7 +23,7 @@ const App = () => {
       to: '/projects',
       url: 'projects',
       subsection: [
-        {section: 'Polytechnic', active: true},
+        { section: 'Polytechnic', active: true }
       ]
     },
     {
@@ -28,15 +31,27 @@ const App = () => {
       to: '/contact',
       url: 'contact',
     },
-  ]
+  ]);
+
+  useEffect(() => {
+  }, [projects, subHeading])
+
+  const appContents = {
+    pages: pages,
+    projects: projects,
+    setProjects: setProjects,
+    subHeading: subHeading,
+    setSubHeading: setSubHeading
+  }
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Layout pages={pages} />}>
-          <Route path='/' element={<About title={'About Me'}/>}/>
-          <Route path='/projects/*' element={<Projects title={'Projects'} pages={pages} />}/>
-          <Route path='/contact' element={<Contact title={'Contact Me'}/>}/>
+        <Route element={<Layout contents={appContents} />}>
+          <Route path='/' element={<About title={'About Me'} />} />
+          <Route path='/projects' element={<Projects title={'Projects'} contents={appContents} />} />
+          <Route path='/project/*' element={<Project projects={projects} />} />
+          <Route path='/contact' element={<Contact title={'Contact Me'} />} />
         </Route>
       </Routes>
     </BrowserRouter>

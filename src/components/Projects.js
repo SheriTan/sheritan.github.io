@@ -1,33 +1,18 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import Poly from './works/Poly';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-const Projects = ({ title, pages }) => {
-    const [subHeading, setSubHeading] = useState('');
-    const [projects, setProjects] = useState([]);
+const Projects = ({ title, contents }) => {
 
     useEffect(() => {
-        pages.forEach((page) => {
-            if (page.url === 'projects') {
-                page.subsection.forEach((category) => {
-                    if (category.active) {
-                        if (category.section === 'Polytechnic') {
-                            setProjects(Poly);
-                        }
-                        setSubHeading(category.section);
-                    }
-                });
-            }
-        });
-    }, [pages]);
+    }, [contents]);
 
     return (
         <>
-            <span className='card_heading'>{subHeading} {title}</span>
+            <span className='card_heading'>{contents.subHeading} {title}</span>
             <div className='thumbnail_display'>
                {
-                projects.reverse().map((project, index) => (
-                    <Link to={'/projects/?projID='+project.id} key={index}>
+                contents.projects.reverse().map((project, index) => (
+                    <Link to={'/project?projID='+project.id} key={index}>
                         <div className='projContainer'>
                             <img src={project.thumbnail} alt={project.projectName}/>
                         </div>

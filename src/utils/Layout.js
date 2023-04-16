@@ -1,12 +1,11 @@
-import React, { Fragment, useEffect, useRef, useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Sidebar from './Sidebar';
-const Layout = ({pages}) => {
+const Layout = ({contents}) => {
     return (
         <div className='background_container'>
             <div className='inner_container'>
-                <Sidebar items={pages} />
+                <Sidebar items={contents} />
                 <div className='main_content'>
                     <Outlet />
                 </div>
