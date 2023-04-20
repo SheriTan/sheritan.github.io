@@ -34,7 +34,7 @@ const Sidebar = ({ items }) => {
 
     return (
         <div className='navbar'>
-            <h1>SHERI TAN</h1>
+            <img className='logo' src='/Logo.png' />
             {pages.map((page, index) => (
                 <Link to={page.to} key={index}>
                     <div className={`nav_item ${(page.url === currPath || page.url.includes(currPath) && currPath.includes('project')) && 'active primary'}`}>

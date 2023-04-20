@@ -71,6 +71,11 @@ body {
     width: 15%;
     color: $text;
 
+    .logo{
+        width: 100%;
+        padding: 1em;
+    }
+
     .nav_item {
         display: flex;
         align-items: center;
@@ -179,6 +184,31 @@ body {
         }
     }
 
+    .download_btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1.25em;
+        padding: 0.75em 1em 0.75em 1em;
+        border-radius: 0.625em;
+        background: $secondary_color;
+        border: none;
+
+        img{
+            width: 1.875em;
+            margin-right: 0.25em;
+        }
+
+        span{
+            color: $text;
+            font-size: 16px;
+        }
+
+        &:hover{
+            box-shadow: 1px 1px 10px $secondary_nav;
+        }
+    }
+
     .thumbnail_display {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -189,6 +219,11 @@ body {
         .projContainer {
             margin-bottom: 1.25em;
             display: flex;
+
+            img{
+                width: 18.75em;
+                border-radius: 0.625em;
+            }
 
             &:hover {
                 box-shadow: 2px 2px 15px $secondary_nav;
